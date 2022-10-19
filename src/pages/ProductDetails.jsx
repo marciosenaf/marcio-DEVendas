@@ -30,31 +30,39 @@ const ProductDetails = () => {
         category,
         shortDesc } = product
 
-        const relatedProduts = products.filter(item=> item.category===category)
+    const relatedProduts = products.filter(item => item.category === category)
 
-        const submitHandler =(e)=>{
-            e.preventDefault()
-        
-            const reviewUserName = reviewUser.current.value
-            const reviewUserMsg = reviewMsg.current.value
+    const submitHandler = (e) => {
+        e.preventDefault()
 
+        const reviewUserName = reviewUser.current.value
+        const reviewUserMsg = reviewMsg.current.value
+
+        const reviewObj = {
+            UserName: reviewUserName,
+            text: reviewUserMsg,
+            rating,
         }
 
-        const addToCart = ()=>{
-            dispatch(cartActions.addItem({
-                id,
-                image:imgUrl,
-                productName,
-                price
-            }))
+        console.log(reviewObj);
+        toast.success("Review submitted")
+    }
 
-            toast.success('Product added successfully')
+    const addToCart = () => {
+        dispatch(cartActions.addItem({
+            id,
+            image: imgUrl,
+            productName,
+            price
+        }))
 
-        }
+        toast.success('Product added successfully')
 
-        useEffect(()=>{
-            window.scrollTo(0,0)
-        },[product]);
+    }
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [product]);
 
     return (
         <Helmet title={productName}>
@@ -71,23 +79,23 @@ const ProductDetails = () => {
                                 <h2>{productName}</h2>
                                 <div className="product__rating d-flex alingn-items-center gap-5 mb-3" >
                                     <div>
-                                        <span onClick={() => setRating(1)}>
+                                        <span>
                                             <i class="ri-star-s-fill"></i>
                                         </span>
 
-                                        <span onClick={() => setRating(2)} >
+                                        <span >
                                             <i class="ri-star-s-fill"></i>
                                         </span>
 
-                                        <span onClick={() => setRating(3)} >
+                                        <span >
                                             <i class="ri-star-s-fill"></i>
                                         </span>
 
-                                        <span onClick={() => setRating(4)} >
+                                        <span >
                                             <i class="ri-star-half-s-line"></i>
                                         </span>
 
-                                        <span onClick={() => setRating(5)} >
+                                        <span >
                                             <i class="ri-star-half-s-line"></i>
                                         </span>
 
@@ -99,14 +107,14 @@ const ProductDetails = () => {
                                 </div>
 
                                 <div className="d-flex align-items-center gap-5">
-                                <span className="product__price">${price}</span>
-                                <span>Category: {category}</span>
+                                    <span className="product__price">${price}</span>
+                                    <span>Category: {category}</span>
                                 </div>
 
                                 <p className="mt-3">{shortDesc}</p>
 
-                                <motion.button whileTap={{ scale: 1.2 }} 
-                                className="buy__btn" onClick={addToCart}>
+                                <motion.button whileTap={{ scale: 1.2 }}
+                                    className="buy__btn" onClick={addToCart}>
                                     Add to Cart
                                 </motion.button>
 
@@ -160,11 +168,26 @@ const ProductDetails = () => {
                                                     </div>
 
                                                     <div className="form__group d-flex align-items gap-5 rating__group">
-                                                        <span>1<i class="ri-star-s-fill"></i></span>
-                                                        <span>2<i class="ri-star-s-fill"></i></span>
-                                                        <span>3<i class="ri-star-s-fill"></i></span>
-                                                        <span>4<i class="ri-star-s-fill"></i></span>
-                                                        <span>5<i class="ri-star-s-fill"></i></span>
+
+                                                        <motion.span whileTap={{ scale: 1.2 }} onClick={() => setRating(1)}>
+                                                            1<i class="ri-star-s-fill"></i>
+                                                        </motion.span>
+
+                                                        <motion.span whileTap={{ scale: 1.2 }} onClick={() => setRating(2)}>
+                                                            2<i class="ri-star-s-fill"></i>
+                                                        </motion.span>
+
+                                                        <motion.span whileTap={{ scale: 1.2 }} onClick={() => setRating(3)}>
+                                                            3<i class="ri-star-s-fill"></i>
+                                                        </motion.span>
+
+                                                        <motion.span whileTap={{ scale: 1.2 }} onClick={() => setRating(4)}>
+                                                            4<i class="ri-star-s-fill"></i>
+                                                        </motion.span>
+
+                                                        <motion.span whileTap={{ scale: 1.2 }} onClick={() => setRating(5)}>
+                                                            5<i class="ri-star-s-fill"></i>
+                                                        </motion.span>
                                                     </div>
 
                                                     <div className="form__group" >
@@ -191,7 +214,7 @@ const ProductDetails = () => {
                             </h2>
                         </Col>
 
-                            <ProductsList data={relatedProduts}/>
+                        <ProductsList data={relatedProduts} />
 
                     </Row>
                 </Container>
