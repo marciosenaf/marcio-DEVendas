@@ -5,6 +5,7 @@ import logo from '../../assets/images/eco-logo.png'
 import { Container, Row } from "reactstrap";
 import userIcon from '../../assets/images/user-icon.png'
 import {motion} from 'framer-motion'
+import { useSelector } from "react-redux";
 const nav__link = [
     {
         path: 'home',
@@ -23,7 +24,7 @@ const nav__link = [
 const Header = () => {
 
     const headerRef = useRef(null)
-
+    const totalQuantity = useSelector(state => state.cart.totalQuantity)
     const menuRef = useRef(null)
 
     const stickyHeaderFunc = () => {
@@ -81,7 +82,7 @@ const Header = () => {
                         </span>     
                         <span className="cart__icon">
                             <i class="ri-shopping-bag-line"></i>
-                            <span className="badge">2</span>
+                            <span className="badge">{totalQuantity}</span>
                         </span>
                         
                         <span>
