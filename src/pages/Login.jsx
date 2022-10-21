@@ -24,7 +24,7 @@ const [password, setPassword] = useState('')
                         <input type="password" placeholder="Enter your password" 
                         value={password} onChange={e=> setPassword(e.target.value) }/>
                     </FormGroup>
-                <button className="buy__btn auth__btn">Login</button>
+                <button className="buy__btn auth__btn" type="submit">Login</button>
                 <p>Don't have an account? <Link to="/signup"> Create an account</Link></p>
                 </Form>
                 </Col>
