@@ -7,6 +7,9 @@ import userIcon from '../../assets/images/user-icon.png'
 import { motion } from 'framer-motion'
 import { useSelector } from "react-redux";
 import useAuth from "../../custom-hooks/useAuth";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase.config";
+import { toast } from "react-toastify";
 const nav__link = [
     {
         path: 'home',
@@ -29,6 +32,7 @@ const Header = () => {
     const menuRef = useRef(null)
     const navigate = useNavigate()
     const { currentUser } = useAuth()
+    const profileActionsRef = useRef(null)
 
     const stickyHeaderFunc = () => {
         window.addEventListener("scroll", () => {
@@ -43,6 +47,15 @@ const Header = () => {
         });
     };
 
+    const logout = () =>{
+        signOut(auth).then(()=>{
+            toast.success('Logged out')
+            navigate('/home')
+        } ).catch(err=>{
+            toast.error(err.message)
+        })
+    }
+
     useEffect(() => {
         stickyHeaderFunc()
 
@@ -54,6 +67,8 @@ const Header = () => {
     const navigateToCart = () => {
         navigate('/cart')
     }
+
+    const toggleProfileActions = ()=> profileActionsRef.current.classList.toggle('show__profileActions')
 
     return <header className="header" ref={headerRef}>
         <Container>
@@ -82,7 +97,7 @@ const Header = () => {
                         </ul>
                     </div>
 
-                    <div className="nav__icons">
+                    <div className="nav__icons" >
                         <span className="fav__icon">
                             <i class="ri-heart-line" ></i>
                             <span className="badge">1</span>
@@ -95,13 +110,14 @@ const Header = () => {
                         <div className="profile">
                             <motion.img whileTap={{ scale: 1.2 }} src={
                                 currentUser ? currentUser.photoURL : userIcon
-                            } alt="" />
+                            } alt=""  onClick={toggleProfileActions}/>
                         
-                        <div className="profile__actions">
+                        <div className="profile__actions" ref={profileActionsRef} onClick={toggleProfileActions} >
                             {
-                                    currentUser ? <span>Logout</span> :
-                                    <div>
-                                        <Link to></Link>
+                                    currentUser ? <span onClick={logout} >Logout</span> :
+                                    <div className="d-flex align-items-center justify-content-center flex-column" >
+                                        <Link to='/signup'>Signup</Link>
+                                        <Link to='/login'>Login</Link>\
                                     </div>
                             }
                         </div>
