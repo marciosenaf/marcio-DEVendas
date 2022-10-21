@@ -2,30 +2,77 @@ import React, { useState }from "react";
 import Helmet from '../components/Helmet/Helmet'
 import { Container, Row, Col, Form, FormGroup } from "reactstrap";
 import { Link } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { Auth } from "firebase/auth";
+
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { setDoc, doc } from "firebase/firestore";
+
 import { auth } from "../firebase.config";
+import { storage } from "../firebase.config";
+import { db } from "../firebase.config";
+
+import { toast } from "react-toastify";
+
+import "../styles/login.css"
+import { useNavigate } from "react-router-dom";
+
 
 const Signup= () => {
 
-const [username, setUsername] = useState('')
-const [email, setEmail] = useState('')
-const [password, setPassword] = useState('')
-const [file, setFile] = useState(null)
-const [loading, setLoading] = useState(false)
-const signup = async(e)=>{
-    e.preventDefault()
+const [username, setUsername] = useState("");
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+const [file, setFile] = useState(null);
+const [loading, setLoading] = useState(false);
+
+const navigate = useNavigate("")
+
+const signup = async(e) => { 
+    e.preventDefault();
+    setLoading(true);
 
     try{
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password)
+        const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            email, 
+            password
+            );
 
         const user = userCredential.user
-        console.log(user)
+
+        const storageRef = ref(storage, `images/${Date.now() + username }`)
+        const uploadTask = uploadBytesResumable(storageRef, file)
+
+        uploadTask.on((error)=>{
+            toast.error(error.message)
+        }, ()=>{
+            getDownloadURL(uploadTask.snapshot.ref).then(async(donwloadURL)=>{
+                
+                // update user profile
+                await updateProfile(user,{
+                    displayName : username,
+                    photoURL: donwloadURL
+                });
+
+                //store user data in firestore database 
+                await setDoc(doc(db,"users", user.uid),{
+                    uid: user.uid,
+                    displayName: username,
+                    email, 
+                    photoURL: donwloadURL,
+                })
+
+                    setLoading(false)
+                    toast.success('Account created')
+                    navigate('/login')
+
+            } )
+        })
 
     } catch (error) {
+        setLoading(false)
+        toast.error("something went wrong")
         
-
-
     } 
 } 
 
@@ -33,34 +80,45 @@ const signup = async(e)=>{
     <section>
         <Container>
             <Row>
-                <Col lg='6' className="m-auto text-center" >
-                <h3 className="fw-bold fs-4">Signup</h3>
+                {
+                    loading? ( 
+                    <Col lg='12' className="text-center" >
+                        
+                        <h5 className="fw-bold">Loading....</h5>
+                        
+                    </Col> 
+                            ) : (
+                    
+                    <Col lg='6' className="m-auto text-center" >
+                
+                    <h3 className="fw-bold fs-4">Signup</h3>
 
-                <Form className="auth__form">
+            <Form className="auth__form" onSubmit={signup}>
 
-                <FormGroup className="form__group">
+                <FormGroup className="form__group" >
                         <input type="text" placeholder="Username"
-                        value={username} onSubmit={signup} onChange={e=> setUsername(e.target.value) }/>
+                        value={username}  onChange={(e)=> setUsername(e.target.value) }/>
                     </FormGroup>
 
                 <FormGroup className="form__group">
                         <input type="email" placeholder="Enter your email"
-                        value={email} onChange={e=> setEmail(e.target.value) }/>
+                        value={email} onChange={(e)=> setEmail(e.target.value) }/>
                     </FormGroup>
 
                     <FormGroup className="form__group">
                         <input type="password" placeholder="Enter your password" 
-                        value={password} onChange={e=> setPassword(e.target.value) }/>
+                        value={password} onChange={(e)=> setPassword(e.target.value) }/>
                     </FormGroup>
 
                     <FormGroup className="form__group">
-                        <input type="file" onChange={e=> setPassword(e.target.files[0]) }/>
+                        <input type="file" onChange={(e)=> setFile(e.target.files[0]) }/>
                     </FormGroup>
 
                 <button className="buy__btn auth__btn" type="submit">Create an Account</button>
                 <p>Already have an account? <Link to="/login">Login</Link></p>
-                </Form>
+            </Form>
                 </Col>
+                )}
             </Row>
         </Container>
     </section>
