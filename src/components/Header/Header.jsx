@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
+
 import './header.css'
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from '../../assets/images/eco-logo.png'
 import { Container, Row } from "reactstrap";
 import userIcon from '../../assets/images/user-icon.png'
@@ -27,12 +29,13 @@ const nav__link = [
 
 const Header = () => {
 
-    const headerRef = useRef(null)
-    const totalQuantity = useSelector(state => state.cart.totalQuantity)
-    const menuRef = useRef(null)
-    const navigate = useNavigate()
-    const { currentUser } = useAuth()
-    const profileActionsRef = useRef(null)
+    const headerRef = useRef(null);
+    const totalQuantity = useSelector(state => state.cart.totalQuantity);
+    const menuRef = useRef(null);
+    const navigate = useNavigate();
+    const { currentUser } = useAuth();
+    const profileActionRef = useRef(null);
+
 
     const stickyHeaderFunc = () => {
         window.addEventListener("scroll", () => {
@@ -68,7 +71,13 @@ const Header = () => {
         navigate('/cart')
     }
 
-    const toggleProfileActions = ()=> profileActionsRef.current.classList.toggle('show__profileActions')
+const toggleProfileActions = () => {
+    if (profileActionRef.current.style.display === "none" ){
+     profileActionRef.current.style.display = "flex" 
+    } else {
+    profileActionRef.current.style.display = "none" 
+    }
+}
 
     return <header className="header" ref={headerRef}>
         <Container>
@@ -100,7 +109,7 @@ const Header = () => {
                     <div className="nav__icons" >
                         <span className="fav__icon">
                             <i class="ri-heart-line" ></i>
-                            <span className="badge">1</span>
+                            <span className="badge"></span>
                         </span>
                         <span className="cart__icon" onClick={navigateToCart} >
                             <i class="ri-shopping-bag-line"></i>
@@ -108,18 +117,24 @@ const Header = () => {
                         </span>
 
                         <div className="profile">
-                            <motion.img whileTap={{ scale: 1.2 }} src={
-                                currentUser ? currentUser.photoURL : userIcon
-                            } alt=""  onClick={toggleProfileActions}/>
+                            <motion.img whileTap={{ scale: 1.2 }} 
+                            src={currentUser ? currentUser.photoURL : userIcon } 
+                            alt="" onClick={toggleProfileActions}
+                            />
                         
-                        <div className="profile__actions" ref={profileActionsRef} onClick={toggleProfileActions} >
-                            {
-                                    currentUser ? <span onClick={logout} >Logout</span> :
+                        <div 
+                        className="profile__actions" 
+                        ref={profileActionRef}
+                        onClick={toggleProfileActions} >
+                            
+                                    { currentUser ? (
+                                    <span onClick={logout} >Logout</span> 
+                                    ) : (
                                     <div className="d-flex align-items-center justify-content-center flex-column" >
-                                        <Link to='/signup'>Signup</Link>
-                                        <Link to='/login'>Login</Link>\
+                                        <Link to="/signup">Signup</Link>
+                                        <Link to="/login">Login</Link>
                                     </div>
-                            }
+                            )}
                         </div>
 
                         </div>

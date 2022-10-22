@@ -82,7 +82,7 @@
     border-radius: 50%;
 }
 
-.nav__icons .profile{
+.nav__icons .profile {
     position: relative;
     z-index: 9;
 }
@@ -90,7 +90,7 @@
 .nav__icons .profile .profile__actions {
     position: absolute;
     top: 98%;
-    left: 0;
+    right: 0;
     width: 150px;
     z-index: 10;
     padding: 15px;
@@ -99,13 +99,9 @@
     flex-direction: column;
     background: var(--card-bg-01);
     line-height: 30px;
-    display: none;
     cursor: pointer;
 }
 
-.show__profileActions{
-    display: block;
-}
 
 .mobile__menu {
     font-size: 1.3rem;
