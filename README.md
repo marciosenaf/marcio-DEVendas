@@ -6,10 +6,10 @@ Link do Projeto: https://marcio-devendas.pages.dev/home
 
 Este Projeto e uma aplicacao voltada mais para o front-end q tem como objetivo ser uma loja virtual, possuindo versatilidade e as devidas normas de seguranca
 
-## Layout mobile
+## Layout no mobile
 ![Mobile ](https://github.com/marciosenaf/marcio-DEVendas/blob/main/src/assets/images/a2github.png)
 
-## Layout computador
+## Layout no computador
 ![Web](https://github.com/marciosenaf/marcio-DEVendas/blob/main/src/assets/images/a1github.png)
 
 # Tecnologias utilizadas
