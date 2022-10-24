@@ -19,33 +19,33 @@ Este Projeto e uma aplicacao voltada mais para o front-end q tem como objetivo s
 
 ## Dependencias Instaladas
 
-#### @reduxjs/toolkit: 
+- #### @reduxjs/toolkit: 
 uma biblioteca oficialmente recomendada e SOPE que significa biblioteca de gerenciamento de estado simples, opinativa, poderosa e eficaz. Isso nos permite
  escrever um código mais eficiente, acelerar o processo de desenvolvimento e aplicar automaticamente as melhores práticas recomendadas
 
-#### Bootstrap:
+- #### Bootstrap:
 é um framework web com código-fonte aberto para desenvolvimento de componentes de interface e front-end para sites e aplicações web,
  usando HTML, CSS e JavaScript, baseado em modelos de design para a tipografia, melhorando a experiência do usuário em um site amigável e responsivo
 
-#### Firebase:
+- #### Firebase:
 O Firebase é um conjunto de serviços de hospedagem para qualquer tipo de aplicativo.
 Oferece hospedagem NoSQL e em tempo real de bancos de dados, conteúdo, autenticação social e notificações, ou serviços, como um servidor de comunicação
 em tempo real
 
-#### Framer-motion: 
+- #### Framer-motion: 
 Uma biblioteca de movimento pronta para produção para React. Utilize o poder por trás do Framer, a melhor ferramenta de prototipagem para equipes.
 Orgulhosamente de código aberto.
 
-### React-redux:
+- #### React-redux:
 Redux é uma biblioteca JavaScript de código aberto para gerenciar o estado do aplicativo. É mais comumente usado com bibliotecas 
 como React ou Angular para criar interfaces de usuário. Semelhante pela arquitetura Flux do Facebook, foi criado por Dan Abramov e Andrew Clark
 
-#### React-toastify:
+- #### React-toastify:
 Frequentemente, enquanto estamos desenvolvendo nossas aplicações, desejamos informar ao usuário mensagens de sucesso ou erro após alguma ação tomada.
 Nativamente pelo próprio Javascript, poderíamos exibir através do window.alert, mas convenhamos, não é a maneira mais elegante a ser seguida!
 Pensando nisso, existem diversas bibliotecas a qual nos ajudam nesta simples tarefa e hoje vamos falar de uma desenvolvida para React, chamada React-tostify!
 
-#### Reactstrap:
+- #### Reactstrap:
 Reactstrap é uma biblioteca de front-end popular que é fácil de usar os componentes do React Bootstrap 4. Esta biblioteca contém os componentes React stateless 
 para Bootstrap 4. O componente Button permite que o usuário execute ações e faça escolhas com um único toque. Podemos usar a seguinte abordagem no ReactJS 
 para usar o componente do botão ReactJS Reactstrap.
