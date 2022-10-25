@@ -72,10 +72,10 @@ const Header = () => {
     }
 
 const toggleProfileActions = () => {
-    if (profileActionRef.current.style.display === "none" ){
-     profileActionRef.current.style.display = "flex" 
+    if (profileActionRef.current.style.display === "flex" ){
+     profileActionRef.current.style.display = "none" 
     } else {
-    profileActionRef.current.style.display = "none" 
+    profileActionRef.current.style.display = "flex" 
     }
 }
 
