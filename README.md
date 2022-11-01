@@ -14,7 +14,7 @@ Este Projeto e uma aplicacao voltada mais para o front-end q tem como objetivo s
 
 # Tecnologias utilizadas
 
-- linguagem JavaScript (JSX)
+- linguagem de programacao JavaScript (JSX)
 - feito na biblioteca React js
 
 ## Dependencias Instaladas
@@ -58,7 +58,7 @@ para usar o componente do botão ReactJS Reactstrap.
 
 ```bash
 # clonar repositório
-git clone https://github.com/marciosenaf/jogo-da-velha
+git clone https://github.com/marciosenaf/marcio-DEVendas
 
 # instalar as dependencias
 npm install
