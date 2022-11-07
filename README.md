@@ -60,13 +60,13 @@ para usar o componente do botão ReactJS Reactstrap.
 # clonar repositório
 git clone https://github.com/marciosenaf/marcio-DEVendas
 
-# instalar as dependencias
+# Instalar as dependencias
 npm install
 
-# buildar o projeto
+# Buildar o projeto
 npm run build
 
-# executar o projeto
+# Executar o projeto
 npm start
 ```
 
