@@ -39,7 +39,9 @@ Uma biblioteca de movimento pronta para produção para React. Utilize o poder p
 Orgulhosamente de código aberto.
 
 - #### React-redux:
-Redux is an open source JavaScript library for managing application state. It is most commonly used with libraries
+Redux is an open source JaScript library for managing appli
+## Deployment to production
+cation state. It is most commonly used with libraries
 like React or Angular to create user interfaces. Similar in architecture to Facebook's Flux, it was created by Dan Abramov and Andrew Clark
 
 - #### React-toastify:
@@ -53,22 +55,21 @@ for Bootstrap 4. The Button component allows the user to perform actions and mak
 to use the ReactJS Reactstrap button component.
 
 
-## Implantação em produção
+## Deployment to production
 - CloudFlare
 
-# Como executar o projeto
-
+# How to run the project
 ```bash
-# clonar repositório
+# clone repository
 git clone https://github.com/marciosenaf/marcio-DEVendas
 
-# Instalar as dependencias
+# Install dependencies
 npm install
 
-# Buildar o projeto
+# Build the project
 npm run build
 
-# Executar o projeto
+# Run the projectnpm start
 npm start
 ```
 
