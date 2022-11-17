@@ -14,9 +14,9 @@ This Project is an application focused more on the front-end that aims to be a v
 
 # Technologies used
 
-- linguagem de programacao JavaScript (JSX)
-- feito na biblioteca React js
-
+- JavaScript programming language (JSX)
+- made in React js library
+- 
 ## Dependencias Instaladas
 
 - #### @reduxjs/toolkit: 
