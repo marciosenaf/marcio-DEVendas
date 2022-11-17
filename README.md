@@ -1,6 +1,6 @@
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/marciosenaf/marcio-DEVendas/blob/main/LICENSE) 
 
-# About the project
+# About the Project
 
 Project Link: https://marcio-devendas.pages.dev/home
 
