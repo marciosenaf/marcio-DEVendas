@@ -16,39 +16,41 @@ This Project is an application focused more on the front-end that aims to be a v
 
 - JavaScript programming language (JSX)
 - made in React js library
-- 
-## Dependencias Instaladas
+
+## Installed Dependencies
 
 - #### @reduxjs/toolkit: 
-uma biblioteca oficialmente recomendada e SOPE que significa biblioteca de gerenciamento de estado simples, opinativa, poderosa e eficaz. Isso nos permite
- escrever um código mais eficiente, acelerar o processo de desenvolvimento e aplicar automaticamente as melhores práticas recomendadas
+An officially recommended library and SOPE which stands for simple, opinionated, powerful and effective state management library. This allows us
+write more efficient code, speed up the development process, and automatically apply recommended best practices
 
 - #### Bootstrap:
-é um framework web com código-fonte aberto para desenvolvimento de componentes de interface e front-end para sites e aplicações web,
- usando HTML, CSS e JavaScript, baseado em modelos de design para a tipografia, melhorando a experiência do usuário em um site amigável e responsivo
+Resultados de tradução
+is an open-source web framework for developing interface and front-end components for websites and web applications,
+using HTML, CSS and JavaScript, based on design templates for typography, improving the user experience in a friendly and responsive website
+
 
 - #### Firebase:
-O Firebase é um conjunto de serviços de hospedagem para qualquer tipo de aplicativo.
-Oferece hospedagem NoSQL e em tempo real de bancos de dados, conteúdo, autenticação social e notificações, ou serviços, como um servidor de comunicação
-em tempo real
+Firebase is a set of hosting services for any type of application.
+Offers NoSQL and real-time hosting of databases, content, social authentication and notifications, or services such as a communication server
+In real time
 
 - #### Framer-motion: 
 Uma biblioteca de movimento pronta para produção para React. Utilize o poder por trás do Framer, a melhor ferramenta de prototipagem para equipes.
 Orgulhosamente de código aberto.
 
 - #### React-redux:
-Redux é uma biblioteca JavaScript de código aberto para gerenciar o estado do aplicativo. É mais comumente usado com bibliotecas 
-como React ou Angular para criar interfaces de usuário. Semelhante pela arquitetura Flux do Facebook, foi criado por Dan Abramov e Andrew Clark
+Redux is an open source JavaScript library for managing application state. It is most commonly used with libraries
+like React or Angular to create user interfaces. Similar in architecture to Facebook's Flux, it was created by Dan Abramov and Andrew Clark
 
 - #### React-toastify:
-Frequentemente, enquanto estamos desenvolvendo nossas aplicações, desejamos informar ao usuário mensagens de sucesso ou erro após alguma ação tomada.
-Nativamente pelo próprio Javascript, poderíamos exibir através do window.alert, mas convenhamos, não é a maneira mais elegante a ser seguida!
-Pensando nisso, existem diversas bibliotecas a qual nos ajudam nesta simples tarefa e hoje vamos falar de uma desenvolvida para React, chamada React-tostify!
+Often, while we are developing our applications, we want to inform the user of success or error messages after some action is taken.
+Natively by Javascript itself, we could display it through window.alert, but let's face it, it's not the most elegant way to be followed!
+Thinking about it, there are several libraries that help us in this simple task and today we are going to talk about one developed for React, called React-tostify!
 
 - #### Reactstrap:
-Reactstrap é uma biblioteca de front-end popular que é fácil de usar os componentes do React Bootstrap 4. Esta biblioteca contém os componentes React stateless 
-para Bootstrap 4. O componente Button permite que o usuário execute ações e faça escolhas com um único toque. Podemos usar a seguinte abordagem no ReactJS 
-para usar o componente do botão ReactJS Reactstrap.
+Reactstrap is a popular frontend library which is easy to use React Bootstrap 4 components. This library contains stateless React components
+for Bootstrap 4. The Button component allows the user to perform actions and make choices with a single tap. We can use the following approach in ReactJS
+to use the ReactJS Reactstrap button component.
 
 
 ## Implantação em produção
