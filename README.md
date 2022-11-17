@@ -1,18 +1,18 @@
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/marciosenaf/marcio-DEVendas/blob/main/LICENSE) 
 
-# Sobre o projeto
+# About the project
 
-Link do Projeto: https://marcio-devendas.pages.dev/home
+Project Link: https://marcio-devendas.pages.dev/home
 
-Este Projeto e uma aplicacao voltada mais para o front-end q tem como objetivo ser uma loja virtual, possuindo versatilidade e as devidas normas de seguranca
+This Project is an application focused more on the front-end that aims to be a virtual store, having versatility and the necessary security standards.
 
-## Layout no mobile
+## Mobile layout
 ![Mobile ](https://github.com/marciosenaf/marcio-DEVendas/blob/main/src/assets/images/a2github.png)
 
-## Layout no computador
+## Computer layout
 ![Web](https://github.com/marciosenaf/marcio-DEVendas/blob/main/src/assets/images/a1github.png)
 
-# Tecnologias utilizadas
+# Technologies used
 
 - linguagem de programacao JavaScript (JSX)
 - feito na biblioteca React js
