@@ -24,8 +24,7 @@ An officially recommended library and SOPE which stands for simple, opinionated,
 write more efficient code, speed up the development process, and automatically apply recommended best practices
 
 - #### Bootstrap:
-Resultados de tradução
-is an open-source web framework for developing interface and front-end components for websites and web applications,
+Is an open-source web framework for developing interface and front-end components for websites and web applications,
 using HTML, CSS and JavaScript, based on design templates for typography, improving the user experience in a friendly and responsive website
 
 
@@ -35,13 +34,11 @@ Offers NoSQL and real-time hosting of databases, content, social authentication 
 In real time
 
 - #### Framer-motion: 
-Uma biblioteca de movimento pronta para produção para React. Utilize o poder por trás do Framer, a melhor ferramenta de prototipagem para equipes.
-Orgulhosamente de código aberto.
+A production-ready motion library for React. Harness the power behind Framer, the ultimate team prototyping tool.
+Proudly open source.
 
 - #### React-redux:
-Redux is an open source JaScript library for managing appli
-## Deployment to production
-cation state. It is most commonly used with libraries
+Redux is an open source JaScript library for managing application state. It is most commonly used with libraries
 like React or Angular to create user interfaces. Similar in architecture to Facebook's Flux, it was created by Dan Abramov and Andrew Clark
 
 - #### React-toastify:
