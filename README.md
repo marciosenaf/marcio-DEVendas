@@ -2,7 +2,7 @@
 
 # About the Project
 
-Project Link: https://marcio-devendas.pages.dev/home
+Demo: https://marcio-devendas.pages.dev/home
 
 This Project is an application focused more on the front-end that aims to be a virtual store, having versatility and the necessary security standards.
 
