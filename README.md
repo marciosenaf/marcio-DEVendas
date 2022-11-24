@@ -66,7 +66,7 @@ npm install
 # Build the project
 npm run build
 
-# Run the projectnpm start
+# Run the project
 npm start
 ```
 
