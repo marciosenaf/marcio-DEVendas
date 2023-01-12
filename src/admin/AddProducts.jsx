@@ -23,15 +23,16 @@ const AddProducts = () => {
                 <span>Description</span>
                 <input type="text" placeholder='Description....' />
               </FormGroup>
-              <div>
-                <FormGroup className='form__group'>
+
+              <div className="d-flex align-itens-center justify-content-between gap-5">
+                <FormGroup className='form__group w-50' >
                   <span>Price</span>
                   <input type="text" placeholder='$100' />
                 </FormGroup>
 
-                <FormGroup className='form__group'>
+                <FormGroup className='form__group w-50'>
                   <span>Category</span>
-                  <select>
+                  <select className='w-100'>
                     <option value="chair">Chair</option>
                     <option value="sofa">Sofa</option>
                     <option value="mobile">Mobile</option>
@@ -41,9 +42,9 @@ const AddProducts = () => {
                 </FormGroup>
               </div>
               <div>
-              <FormGroup className='form__group'>
+                <FormGroup className='form__group'>
                   <span>Product Image</span>
-                  <input type="file"/>
+                  <input type="file" />
                 </FormGroup>
               </div>
             </Form>
