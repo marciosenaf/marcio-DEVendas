@@ -8,6 +8,6 @@ const useGetData = (collectionName) => {
   return (
     <div>useGetData</div>
   )
-}
+}ss
 
 export default useGetData
