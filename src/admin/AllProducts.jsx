@@ -1,8 +1,17 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import productImg from '../assets/images/arm-chair-01.jpg'
+import {db} from '../firebase.config'
+import {doc, deleteDoc} from 'firebase/firestore'
+import useGetData from '../custom-hooks/useGetData'
+import { toast } from 'react-toastify'
 
 const AllProducts = () => {
+
+  const { data: productData, loading } = useGetData('products')
+  const deleteProduct = async (id)=>{
+    await deleteDoc(doc(db,'products', id))
+    toast.success('Deleted')
+  }
   return (
     <section>
       <Container>
@@ -19,21 +28,28 @@ const AllProducts = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                {
+                  loading ? <h4 className='py-5 text-center fw-bold'>Loading.....</h4> :
+                    productData.map(item => (
 
-                  <td>
-                    <img src={productImg} alt="" />
-                  </td>
+                      <tr key={item.id}>
 
-                  <td>Arm Chair</td>
-                  <td>$193</td>
+                        <td>
+                          <img src={item.imgUrl} alt="" />
+                        </td>
 
-                  <td>
-                    {""}
-                    <button className='btn btn-danger'>Delete</button>
-                  </td>
+                        <td>{item.title}</td>
+                        <td>{item.category}</td>
+                        <td>${item.price}</td>
 
-                </tr>
+                        <td>
+                          {""}
+                          <button onClick={()=> {deleteProduct(item.id)}} className='btn btn-danger'>Delete</button>
+                        </td>
+
+                      </tr>
+                    ))}
+
               </tbody>
             </table>
           </Col>
